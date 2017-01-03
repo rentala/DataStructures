@@ -1,5 +1,7 @@
 package ds;
 
+import java.util.Hashtable;
+
 public class LinkedList {
 	Node head;
 	public LinkedList(Node head)
@@ -57,5 +59,53 @@ public class LinkedList {
 			return nextNode;
 		else 
 			return null;
+	}
+	public void remove(int p)
+	{
+		if(p == 0)
+		{
+			this.head = this.head.next;
+		} 
+		else
+		{
+			Node nextNode = this.head;
+			int counter = 0;
+			while(nextNode.hasNext() && counter < p -1)
+			{
+				nextNode = nextNode.next;
+				counter++;
+			}
+			System.out.println("Counter " + counter);
+			System.out.println("p " + p);
+			if(nextNode != null)
+			{
+				if(nextNode.next !=null)
+					nextNode.next = nextNode.next.next;
+				else
+					nextNode.next = null;
+			}
+			
+			
+		}
+		
+		
+	}
+	//Write code to remove duplicates from an unsorted linkedList
+	public void removeDuplicates()
+	{
+		Hashtable<Integer, Integer> hashtable = new Hashtable<>();
+		this.head.getData();
+		hashtable.put(this.head.getData(), this.head.getData());
+		Node nextNode = this.head;
+		int value = 0;
+		while(nextNode.hasNext())
+		{
+			nextNode = nextNode.next;
+			value = hashtable.get(nextNode.getData());
+			if(value == nextNode.getData())
+			{
+				
+			}
+		}
 	}
 }
