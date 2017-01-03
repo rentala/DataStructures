@@ -28,6 +28,18 @@ public class TestCases {
 		ll.print();
 		ll.remove(0);
 		ll.print();
+		System.out.println("// Duplicate bit //");
+		ll.add(1);
+		ll.add(3);
+		ll.add(4);
+		ll.add(3);
+		ll.add(4);
+		ll.add(4);
+		ll.add(4);
+		ll.add(1);
+		ll.print();
+		ll.removeDuplicates();
+		ll.print();
 	}
 	
 	

@@ -75,8 +75,6 @@ public class LinkedList {
 				nextNode = nextNode.next;
 				counter++;
 			}
-			System.out.println("Counter " + counter);
-			System.out.println("p " + p);
 			if(nextNode != null)
 			{
 				if(nextNode.next !=null)
@@ -90,22 +88,35 @@ public class LinkedList {
 		
 		
 	}
+
 	//Write code to remove duplicates from an unsorted linkedList
 	public void removeDuplicates()
 	{
 		Hashtable<Integer, Integer> hashtable = new Hashtable<>();
-		this.head.getData();
 		hashtable.put(this.head.getData(), this.head.getData());
 		Node nextNode = this.head;
-		int value = 0;
-		while(nextNode.hasNext())
+		int index = 1;
+		while(nextNode.hasNext() && nextNode.next !=null)
 		{
+			//System.out.println("ct " + index);
 			nextNode = nextNode.next;
-			value = hashtable.get(nextNode.getData());
-			if(value == nextNode.getData())
+			Integer v = hashtable.get(nextNode.getData());
+			if(v !=null)
 			{
-				
+				//System.out.print("Inital: ");
+				//this.print();
+				remove(index);
+				//System.out.println("Removed and updated to v = " + v + " of index " + index );
+				//this.print();
 			}
+			else
+			{
+				hashtable.put(nextNode.getData(), nextNode.getData());
+				//System.out.println("Inserted " + hashtable.get(nextNode.getData()));
+				index++;
+			}
+			
+			//System.out.println("---------- ///----------");
 		}
 	}
 }
