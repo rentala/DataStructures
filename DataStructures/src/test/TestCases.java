@@ -8,8 +8,9 @@ public class TestCases {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		LinkedListTest();
-		
+		//LinkedListTest();
+		//StackTest();
+		BalancedBracketSolution();
 	}
 	
 	public static void LinkedListTest()
@@ -40,8 +41,69 @@ public class TestCases {
 		ll.print();
 		ll.removeDuplicates();
 		ll.print();
+		System.out.println("---------------End of LinkedList Tests -------------");
 	}
 	
-	
+	public static void HashTableTest()
+	{
+		System.out.println("---------------End of HashTable Tests -------------");
+	}
+	public static void StackTest()
+	{
+		System.out.println("// Basic Stack test");
+		Stack stack = new Stack(5);
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		stack.push(4);
+		stack.push(5);
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.push(5);
+		stack.pop();
+		stack.print();
+		System.out.println("---------------End of Stack Tests -------------");
+		
+	}
+	public static void BalancedBracketSolution()
+	{
+		System.out.println("--------------- Balanced Bracket Stack Tests -------------");
+		String str = "[{]}{[]}{}";
+		String[] strArr = str.split("");
+		java.util.Stack<String> st = new java.util.Stack<String>();
+		
+		for(String s : strArr)
+		{
+			if(s.equalsIgnoreCase("{") || s.equalsIgnoreCase("(") || 
+					s.equalsIgnoreCase("["))
+			{
+				st.push(s); 
+			} 
+			else 
+			{
+				
+				if((s.equalsIgnoreCase("}") && st.peek().equalsIgnoreCase("{"))
+						|| (s.equalsIgnoreCase(")") && st.peek().equalsIgnoreCase("("))
+						|| (s.equalsIgnoreCase("]") && st.peek().equalsIgnoreCase("[")))
+					st.pop();
+				else
+					break;
+			}
+			
+		}
+		System.out.println(str);
+		if(st.isEmpty())
+			System.out.println("Balanced");
+		else
+			System.out.println("Unbalanced");
+		System.out.println("---------------End of Stack Tests -------------");
+	}
 
 }
