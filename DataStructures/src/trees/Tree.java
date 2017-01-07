@@ -19,7 +19,7 @@ public class Tree {
 		Node node = this.root;
 		POT(node);
 	}
-	public void POT(Node node)
+	private void POT(Node node)
 	{
 		System.out.print(node.data + " ");
 		if(node.children!= null && node.children.length>0)
@@ -38,7 +38,7 @@ public class Tree {
 		Node node = this.root;
 		IOT(node);
 	}
-	public void IOT(Node node)
+	private void IOT(Node node)
 	{
 		if(node.children!= null && node.children.length>0)
 		{
@@ -52,4 +52,34 @@ public class Tree {
 			
 		}
 	}
+	public int height()
+	{
+		return getMaxHeight(this.root);
+	}
+	 private int getMaxHeight(Node root)
+	 {
+		 if(root.children != null)
+		 {
+			 int[] heights = new int[root.children.length];
+		        int i=0;
+		        for(Node node : root.children)
+		        {
+		        	heights[i] = 1 + getMaxHeight(node);
+		        	i++;
+		        }
+		 
+		       return getMaxOfArray(heights);   
+		 }
+	         return 0;
+	  }
+	 private int getMaxOfArray(int[] arr)
+	 {
+		 int max = arr[0];
+		 for(int i: arr)
+		 {
+			 if(max<i)
+				 max = i;
+		 }
+		 return max;
+	 }
 }
