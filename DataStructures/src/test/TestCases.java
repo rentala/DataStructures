@@ -3,6 +3,8 @@ package test;
 import java.util.Hashtable;
 
 import ds.*;
+import trees.BinarySearchTree;
+import trees.Tree;
 
 public class TestCases {
 
@@ -106,4 +108,5 @@ public class TestCases {
 		System.out.println("---------------End of Stack Tests -------------");
 	}
 
+	
 }
