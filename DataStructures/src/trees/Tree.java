@@ -56,7 +56,7 @@ public class Tree {
 	{
 		return getMaxHeight(this.root);
 	}
-	 private int getMaxHeight(Node root)
+	private int getMaxHeight(Node root)
 	 {
 		 if(root.children != null)
 		 {
@@ -72,7 +72,7 @@ public class Tree {
 		 }
 	         return 0;
 	  }
-	 private int getMaxOfArray(int[] arr)
+	private int getMaxOfArray(int[] arr)
 	 {
 		 int max = arr[0];
 		 for(int i: arr)
