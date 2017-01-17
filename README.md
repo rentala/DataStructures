@@ -1,5 +1,5 @@
 # DataStructures
-Some practise
+Some practice 
 
 Highlights:
 
